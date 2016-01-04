@@ -32,7 +32,7 @@
  * @file htable.h
  */
 
-#ifdef FEATURE_IRC_CLIENT
+#if defined(FEATURE_IRC_CLIENT) || defined(FEATURE_IRC_SERVER)
 
 // Hash table interface
 #ifndef INCLUDE_HTABLE_H
@@ -190,4 +190,4 @@ void HT_Apply(
 
 #endif // #ifndef INCLUDE_HTABLE_H
 
-#endif // FEATURE_IRC_CLIENT
+#endif // FEATURE_IRC_CLIENT || FEATURE_IRC_SERVER

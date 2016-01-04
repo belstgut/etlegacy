@@ -361,6 +361,10 @@ void SV_Startup(void)
 #ifdef FEATURE_TRACKER
 	Tracker_ServerStart();
 #endif
+
+#ifdef FEATURE_IRC_SERVER
+	SV_OW_IRCSetup();
+#endif
 }
 
 /*
@@ -1253,5 +1257,9 @@ void SV_Shutdown(char *finalmsg)
 
 #ifdef FEATURE_TRACKER
 	Tracker_ServerStop();
+#endif
+
+#ifdef FEATURE_IRC_SERVER
+	SV_OW_IRCInitiateShutdown();
 #endif
 }

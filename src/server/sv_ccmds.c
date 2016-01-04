@@ -765,6 +765,13 @@ void SV_AddOperatorCommands(void)
 	Cmd_AddCommand("sql", DB_ExecSQLCommand_f);
 #endif
 
+#ifdef FEATURE_IRC_SERVER
+	Cmd_AddCommand("irc_connect", SV_OW_InitIRC);
+	Cmd_AddCommand("irc_quit", SV_OW_IRCInitiateShutdown);
+	Cmd_AddCommand("irc_say", SV_OW_IRCSay);
+#endif
+
+
 	Cmd_AddCommand("uptime", SV_Uptime_f);
 
 	SV_DemoInit();

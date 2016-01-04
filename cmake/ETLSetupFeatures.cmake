@@ -228,6 +228,11 @@ if(BUILD_CLIENT OR BUILD_SERVER)
 		set(SERVER_SRC ${SERVER_SRC} ${DBMS_SRC})
 	endif(FEATURE_DBMS)
 
+	if(FEATURE_IRC_SERVER)
+		add_definitions(-DFEATURE_IRC_SERVER)
+		list(APPEND SERVER_SRC ${IRC_CLIENT_FILES})
+	endif(FEATURE_IRC_SERVER)
+
 endif()
 
 #-----------------------------------------------------------------

@@ -607,4 +607,17 @@ qboolean SV_Netchan_Process(client_t *client, msg_t *msg);
 #define DLNOTIFY_BEGIN      0x00000002  // "clientDownload: 4 : beginning ..."
 #define DLNOTIFY_ALL        (DLNOTIFY_REDIRECT | DLNOTIFY_BEGIN)
 
+#ifdef FEATURE_IRC_SERVER // it's irc client in the server binary
+
+//sv_irc.c
+
+void SV_OW_IRCSetup(void);
+void SV_OW_InitIRC(void);
+void SV_OW_IRCInitiateShutdown(void);
+void SV_OW_IRCWaitShutdown(void);
+void SV_OW_IRCSay(void);
+qboolean SV_OW_IRCIsConnected(void);
+qboolean SV_OW_IRCIsRunning(void);
+#endif
+
 #endif // #ifndef INCLUDE_SERVER_H

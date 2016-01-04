@@ -32,7 +32,7 @@
  * @file htable.c
  */
 
-#ifdef FEATURE_IRC_CLIENT
+#if defined(FEATURE_IRC_CLIENT) || defined(FEATURE_IRC_SERVER)
 
 #include "htable.h"
 
